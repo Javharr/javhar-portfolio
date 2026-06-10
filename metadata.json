@@ -1,0 +1,6 @@
+{
+  "name": "Resume & Portfolio",
+  "description": "A personal portfolio and resume website with standard project cases and experience timeline.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
