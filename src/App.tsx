@@ -5,11 +5,13 @@
 
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Stats } from './components/Stats';
 import { About } from './components/About';
 import { Experience } from './components/Experience';
 import { Portfolio } from './components/Portfolio';
 import { Achievements } from './components/Achievements';
 import { Skills } from './components/Skills';
+import { Personal } from './components/Personal';
 import { Contact } from './components/Contact';
 import { StarsBackground } from './components/StarsBackground';
 
@@ -20,11 +22,13 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Stats />
         <About />
         <Skills />
         <Experience />
         <Achievements />
         <Portfolio />
+        <Personal />
         <Contact />
       </main>
     </div>

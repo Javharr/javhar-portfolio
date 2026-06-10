@@ -2,8 +2,9 @@ export interface Project {
   id: string;
   title: string;
   description: string | string[];
+  technicalHighlights?: string[];
   techStack: string[];
-  imageUrl: string;
+  imageUrl?: string;
   link?: string;
   images?: string[];
 }

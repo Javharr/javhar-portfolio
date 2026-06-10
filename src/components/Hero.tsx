@@ -19,9 +19,12 @@ export function Hero() {
           <span className="italic font-serif opacity-80">Bokhodirov.</span>
         </h1>
         
-        <div className="text-white/50 text-lg md:text-2xl max-w-2xl font-light leading-relaxed mb-12 space-y-4">
+        <div className="text-white/50 text-lg md:text-xl max-w-2xl font-light leading-relaxed mb-12 space-y-4">
           <p>
-            Building at the intersection of robotics, scalable software, and intelligent systems.
+            Engineering ideas into real-world systems through robotics, software, and intelligent technologies.
+          </p>
+          <p className="text-base text-white/40">
+            MIS student at Webster University in Tashkent with experience in robotics, aerospace, QA, and software-oriented technologies. Currently exploring AI, systems analysis, and intelligent autonomous systems.
           </p>
         </div>
         

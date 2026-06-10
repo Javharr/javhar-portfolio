@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { portfolioData } from '../data';
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Project } from '../types';
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const images = [project.imageUrl, ...(project.images || [])];
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+  key?: string;
+}
+
+function ProjectCard({ project, index }: ProjectCardProps) {
+  const images = (project.imageUrl ? [project.imageUrl, ...(project.images || [])] : []).filter(Boolean) as string[];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = (e: React.MouseEvent) => {
@@ -26,54 +32,56 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       transition={{ delay: index * 0.1, duration: 0.5 }}
       className="group relative bg-[#141416]/40 backdrop-blur-sm border border-white/5 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all duration-300 shadow-[0_0_0_rgba(255,255,255,0)] hover:shadow-[0_0_30px_rgba(255,255,255,0.03)]"
     >
-      <div className="overflow-hidden mb-8 relative bg-[#0A0A0B]/50 aspect-video border border-white/5">
-        <div className="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors z-10 pointer-events-none" />
-        
-        <AnimatePresence mode="wait">
-          <motion.img 
-            key={currentImageIndex}
-            src={images[currentImageIndex]} 
-            alt={`${project.title} image ${currentImageIndex + 1}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-            referrerPolicy="no-referrer"
-          />
-        </AnimatePresence>
+      {images.length > 0 && (
+        <div className="overflow-hidden mb-8 relative bg-[#0A0A0B]/50 aspect-video border border-white/5">
+          <div className="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors z-10 pointer-events-none" />
+          
+          <AnimatePresence mode="wait">
+            <motion.img 
+              key={currentImageIndex}
+              src={images[currentImageIndex]} 
+              alt={`${project.title} image ${currentImageIndex + 1}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+              referrerPolicy="no-referrer"
+            />
+          </AnimatePresence>
 
-        {images.length > 1 && (
-          <>
-            <button 
-              onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white/70 hover:text-white z-20 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button 
-              onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white/70 hover:text-white z-20 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {images.map((_, i) => (
-                <div 
-                  key={i} 
-                  className={`h-1.5 rounded-full transition-all duration-300 ${i === currentImageIndex ? 'w-4 bg-white' : 'w-1.5 bg-white/30'}`}
-                />
-              ))}
-            </div>
-          </>
-        )}
-      </div>
+          {images.length > 1 && (
+            <>
+              <button 
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white/70 hover:text-white z-20 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white/70 hover:text-white z-20 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {images.map((_, i) => (
+                  <div 
+                    key={i} 
+                    className={`h-1.5 rounded-full transition-all duration-300 ${i === currentImageIndex ? 'w-4 bg-white' : 'w-1.5 bg-white/30'}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
       
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-2xl font-light text-white transition-colors tracking-wide">{project.title}</h3>
       </div>
       
-      <div className="text-sm text-white/50 leading-relaxed font-light mb-8 space-y-4">
+      <div className="text-sm text-white/50 leading-relaxed font-light mb-6 space-y-4">
         {Array.isArray(project.description) ? (
           project.description.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
@@ -82,6 +90,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <p>{project.description}</p>
         )}
       </div>
+
+      {project.technicalHighlights && (
+        <div className="mb-8 p-4 bg-white/[0.02] border border-white/5 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+          {project.technicalHighlights.map((highlight, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <div className="w-1 h-1 bg-white/30 rounded-full shrink-0" />
+              <span className="text-xs text-white/70 font-light tracking-wide">{highlight}</span>
+            </div>
+          ))}
+        </div>
+      )}
 
       <div className="flex flex-col gap-6 mt-auto">
         <div className="flex flex-wrap gap-2">
