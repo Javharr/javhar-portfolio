@@ -6,7 +6,7 @@ export const profile: Profile = {
   location: 'Tashkent, Uzbekistan',
   openTo: 'Open to QA Engineer and Business / Systems Analyst roles',
   summary: [
-    'QA Engineer in the core banking (ABS) team at UZUM Technologies × Kapitalbank. I test payment flows and SWIFT messaging, verify backend logic directly in the database with SQL and PL/SQL, and automate repetitive regression checks with Postman and Python.',
+    'QA Engineer in the core banking (ABS) team at UZUM Technologies × Kapitalbank. I test payment flows and SWIFT messaging, verify backend logic directly in the database with SQL and PL/SQL, and test APIs in Postman.',
     'Graduated from School 21 as a Business Systems Analyst: a full analysis cycle from stakeholders and BPMN to data models, UI specs and REST / SOAP integration. Studying Management Information Systems at Webster University (GPA 3.9, Dean’s List).',
   ],
   email: 'bohodirovjavhar@gmail.com',
@@ -35,9 +35,8 @@ export const experience: Experience[] = [
       'Test core banking (ABS) modules: transactions, payments, balances, account operations and integrations.',
       'Test SWIFT message processing: construction, field validation, routing and status handling, including negative cases (malformed fields, wrong references, duplicates).',
       'Verify results in the database with SQL and trace PL/SQL packages to find where logic breaks, so defects come with a root cause.',
-      'Moved repetitive regression checks into Postman collections and Python scripts (requests, pytest); the team still uses them before releases.',
       'Write checklists and test cases from specifications; mine became part of the team’s permanent regression set.',
-      'Scrum team with two-week sprints; defects and docs in Jira and Confluence, working closely with analysts and backend developers.',
+      'Scrum team with weekly sprints; defects and docs in Jira and Confluence, working closely with analysts and backend developers.',
     ],
   },
   {
