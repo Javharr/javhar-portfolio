@@ -1,12 +1,15 @@
-export interface Project {
-  id: string;
-  title: string;
-  description: string | string[];
-  technicalHighlights?: string[];
-  techStack: string[];
-  imageUrl?: string;
-  link?: string;
-  images?: string[];
+export interface Profile {
+  name: string;
+  headline: string;
+  location: string;
+  summary: string[];
+  email: string;
+  links: { label: string; href: string; handle: string }[];
+}
+
+export interface Highlight {
+  value: string;
+  label: string;
 }
 
 export interface Experience {
@@ -14,21 +17,44 @@ export interface Experience {
   role: string;
   company: string;
   period: string;
-  description: string | string[];
+  current?: boolean;
+  bullets: string[];
+}
+
+export interface Education {
+  id: string;
+  school: string;
+  program: string;
+  period: string;
+  note?: string;
 }
 
 export interface Achievement {
   id: string;
+  rank: string;
   title: string;
   event: string;
-  location?: string;
-  description: string[];
-  keyAreas: string[];
+  location: string;
   year: string;
-  images?: string[];
+  scale?: string;
+  summary: string;
+  images: string[];
 }
 
-export interface SkillCategory {
+export interface Project {
+  id: string;
+  title: string;
+  role: string;
+  summary: string;
+  highlights: string[];
+  stack: string[];
+  cover: string;
+  images: string[];
+  status?: string;
+  link?: string;
+}
+
+export interface SkillGroup {
   id: string;
   category: string;
   skills: string[];
