@@ -8,7 +8,7 @@ interface Props {
 
 export function EducationList({ onOpen }: Props) {
   return (
-    <Section id="education" index="02" title="Education">
+    <Section id="education" index="03" title="Education">
       <ol className="space-y-8">
         {education.map((e) => (
           <li key={e.id} className="print-break-avoid grid gap-1 sm:grid-cols-[140px_1fr] sm:gap-6">

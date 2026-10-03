@@ -1,5 +1,5 @@
 import { Trophy } from 'lucide-react';
-import { achievements, moreHighlights } from '../data';
+import { achievements } from '../data';
 import { Section } from './Section';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 
 export function Awards({ onOpen }: Props) {
   return (
-    <Section id="awards" index="03" title="Honors & Awards">
+    <Section id="awards" index="04" title="Honors & Awards">
       <ol className="space-y-10">
         {achievements.map((a) => {
           const isWin = a.rank.startsWith('1st');
@@ -55,17 +55,6 @@ export function Awards({ onOpen }: Props) {
         })}
       </ol>
 
-      <div className="print-break-avoid mt-10 grid gap-1 sm:grid-cols-[140px_1fr] sm:gap-6">
-        <div className="font-mono text-[12px] text-faint sm:pt-1">Also</div>
-        <ul className="space-y-1.5">
-          {moreHighlights.map((m) => (
-            <li key={m} className="relative pl-4 text-[15px] leading-relaxed text-ink/85">
-              <span className="absolute left-0 top-[0.7em] h-px w-2 bg-faint" aria-hidden />
-              {m}
-            </li>
-          ))}
-        </ul>
-      </div>
     </Section>
   );
 }

@@ -2,6 +2,7 @@ export interface Profile {
   name: string;
   headline: string;
   location: string;
+  openTo?: string;
   summary: string[];
   email: string;
   links: { label: string; href: string; handle: string }[];

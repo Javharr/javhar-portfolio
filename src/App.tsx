@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react';
 import { Awards } from './components/Awards';
+import { Background } from './components/Background';
+import { Bonus } from './components/Bonus';
 import { EducationList } from './components/EducationList';
 import { ExperienceList } from './components/ExperienceList';
 import { Header } from './components/Header';
@@ -8,7 +10,7 @@ import { Lightbox, type GalleryState } from './components/Lightbox';
 import { Projects } from './components/Projects';
 import { Section } from './components/Section';
 import { Sidebar } from './components/Sidebar';
-import { profile } from './data';
+import { caseStudies, profile } from './data';
 
 export default function App() {
   const [gallery, setGallery] = useState<GalleryState | null>(null);
@@ -16,6 +18,7 @@ export default function App() {
 
   return (
     <>
+      <Background />
       <div className="px-3 py-3 sm:px-6 sm:py-10 print:p-0">
         <main className="sheet mx-auto max-w-[1080px] rounded-lg border border-rule bg-sheet px-5 py-10 shadow-[0_1px_2px_rgba(22,24,27,0.04),0_12px_40px_-12px_rgba(22,24,27,0.12)] sm:px-10 md:px-14 md:py-14">
           <Header />
@@ -31,9 +34,12 @@ export default function App() {
                 </div>
               </Section>
               <ExperienceList />
+              <Section id="projects" index="02" title="Projects & case studies">
+                <Projects items={caseStudies} onOpen={open} featureFirst />
+              </Section>
               <EducationList onOpen={open} />
               <Awards onOpen={open} />
-              <Projects onOpen={open} />
+              <Bonus onOpen={open} />
             </div>
 
             <aside className="lg:sticky lg:top-10 lg:self-start">

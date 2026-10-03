@@ -34,7 +34,7 @@ export function Sidebar() {
 
       <Section id="focus" title="Currently exploring">
         <p className="text-[15px] leading-relaxed text-ink/85">
-          Test automation, systems analysis and AI, and autonomous systems where software meets the physical world.
+          Backend quality in financial systems, test automation, and how AI changes analysis and testing work.
         </p>
       </Section>
     </div>
