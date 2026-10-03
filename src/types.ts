@@ -26,7 +26,9 @@ export interface Education {
   school: string;
   program: string;
   period: string;
-  note?: string;
+  badge?: string;
+  details?: string[];
+  images?: string[];
 }
 
 export interface Achievement {

@@ -2,11 +2,12 @@ import type { Achievement, Education, Experience, Highlight, Profile, Project, S
 
 export const profile: Profile = {
   name: 'Javhar Bokhodirov',
-  headline: 'QA & Automation · Robotics · Systems',
+  headline: 'QA Engineer · Business Systems Analyst',
   location: 'Tashkent, Uzbekistan',
   summary: [
-    'MIS student at Webster University in Tashkent, working in QA and automation at UZUM Technologies × Kapitalbank.',
-    'Background in robotics and aerospace: a stratospheric student satellite, an autonomous LiDAR drone, and first places at international and national engineering competitions. Now focused on automation, systems analysis and AI.',
+    'Junior QA Engineer at UZUM Technologies × Kapitalbank, testing core banking systems: web, mobile and API, manual and automated with Python and pytest.',
+    'School 21 graduate in Business Systems Analysis and a Management Information Systems student at Webster University (GPA 3.9, Dean’s List).',
+    'Before software I built robots and drones: a stratospheric student satellite, an autonomous LiDAR drone, and first places at international and national engineering competitions.',
   ],
   email: 'bohodirovjavhar@gmail.com',
   links: [
@@ -17,23 +18,25 @@ export const profile: Profile = {
 };
 
 export const highlights: Highlight[] = [
-  { value: '1st', label: 'International STEM competition, 150+ teams' },
-  { value: '20', label: 'Countries competed against' },
+  { value: '1st', label: 'International STEM competition, 150+ teams from 20 countries' },
+  { value: '3.9', label: 'GPA at Webster University, Dean’s List' },
+  { value: '972 h', label: 'School 21 Business Systems Analyst program' },
   { value: '45 km', label: 'Student satellite altitude' },
-  { value: '400+', label: 'Students in STEM program coordinated' },
 ];
 
 export const experience: Experience[] = [
   {
     id: 'uzum',
-    role: 'QA & Automation',
+    role: 'Junior QA Engineer',
     company: 'UZUM Technologies × Kapitalbank',
     period: '2025 — Present',
     current: true,
     bullets: [
-      'Software and mobile testing in large-scale production systems; bug analysis and reporting.',
-      'Work with developers through testing and release cycles.',
-      'Build automation-focused workflows with Python, SQL and PL/SQL.',
+      'Test core banking (ABS) modules: transactions, payments, balances, account operations and system integrations.',
+      'Web, mobile and API testing; manual API checks in Postman and Swagger / OpenAPI.',
+      'Write and maintain automated tests in Python with requests and pytest.',
+      'Validate backend data and analyse incidents with PL/SQL.',
+      'Design test cases and checklists, report bugs and work in Jira and Confluence with the product team.',
     ],
   },
   {
@@ -42,30 +45,66 @@ export const experience: Experience[] = [
     company: 'TechnoCAMP',
     period: '2024',
     bullets: [
-      'Coordinated a robotics, aerospace and drone-engineering program for 400+ students.',
-      'Organised technical activities and educational events.',
-      'Wrote entrance examinations in mathematics, physics and English.',
+      'Coordinated STEM activities and technical events for 400+ students across multiple schools.',
+      'Organised robotics, drone-engineering and aerospace programs and supported students at workshops and competitions.',
+      'Wrote entrance examinations in mathematics, physics and English for student selection.',
     ],
   },
   {
     id: 'nazarx',
-    role: 'Robotics Engineering',
+    role: 'Robotics Engineer (from intern)',
     company: 'NazarXuz',
     period: '2022 — 2024',
     bullets: [
-      'Worked on drone, robotics and autonomous engineering projects.',
-      'Arduino prototyping, hardware systems and technical experimentation.',
+      'Joined as an intern and became a full member of the robotics engineering team.',
+      'Drone, robotics and aerospace projects involving autonomous systems and LiDAR.',
+      'Hardware integration, Arduino-based systems and technical testing.',
     ],
   },
 ];
 
 export const education: Education[] = [
   {
+    id: 'school21',
+    school: 'School 21',
+    program: 'Business Systems Analyst · professional retraining diploma',
+    period: 'Mar — Oct 2026',
+    badge: 'Graduated',
+    details: [
+      '972-hour project-based program in systems analysis, software architecture and data-oriented technologies.',
+      'Peer-to-peer learning on real-world technical problems.',
+    ],
+    images: ['/school21_2.jpg', '/school21_1.jpg', '/school21_diploma.jpg'],
+  },
+  {
     id: 'webster',
     school: 'Webster University in Tashkent',
-    program: 'Management Information Systems (MIS)',
-    period: 'Current',
+    program: 'B.Sc. Management Information Systems',
+    period: '2024 — 2028',
+    details: ['GPA 3.9 / 4.0 · Dean’s List'],
   },
+  {
+    id: 'school278',
+    school: 'Tashkent State School №278',
+    program: 'High school diploma, advanced math and physics',
+    period: '2013 — 2024',
+    details: ['Title of honour for achievements, academic results and conduct.'],
+  },
+];
+
+export const languages = [
+  { name: 'English', level: 'C1' },
+  { name: 'Russian', level: 'Native' },
+  { name: 'Uzbek', level: 'Native' },
+];
+
+export const moreHighlights: string[] = [
+  'Semi-finalist and team leader: Robo Football, Sumo Robotics, Most Smart House, NASA Space Apps Challenge.',
+  'Plane-drone project flown at a military training ground with permission from the Ministry of Defense.',
+  'Officially invited by the government to attend the President’s Navruz address.',
+  'Model United Nations delegate at several conferences; main submitter in multiple committees.',
+  'Two years at IT Step Academy; accelerated electronics course.',
+  'Tournament chess player for 1.5 years, close to first category.',
 ];
 
 export const achievements: Achievement[] = [
@@ -167,8 +206,10 @@ export const projects: Project[] = [
 ];
 
 export const skills: SkillGroup[] = [
-  { id: 'software', category: 'Software', skills: ['Python', 'SQL', 'PL/SQL', 'Automation testing', 'Mobile testing'] },
-  { id: 'engineering', category: 'Engineering', skills: ['Arduino', 'Robotics', 'Embedded systems', 'Hardware integration'] },
-  { id: 'analysis', category: 'Analysis', skills: ['Systems analysis', 'Data science', 'Problem solving'] },
+  { id: 'qa', category: 'Testing', skills: ['Web testing', 'Mobile testing', 'API testing', 'Manual testing', 'Test cases & checklists', 'Bug reporting'] },
+  { id: 'tools', category: 'Tools', skills: ['Postman', 'Swagger / OpenAPI', 'Jira', 'Confluence'] },
+  { id: 'code', category: 'Automation & data', skills: ['Python', 'pytest', 'requests', 'SQL', 'PL/SQL'] },
+  { id: 'analysis', category: 'Analysis', skills: ['Business systems analysis', 'Software architecture', 'Data science'] },
+  { id: 'engineering', category: 'Engineering', skills: ['Arduino', 'Robotics', 'Embedded systems', 'Electronics', 'Hardware integration'] },
   { id: 'leadership', category: 'Leadership', skills: ['Team coordination', 'STEM mentorship', 'Public speaking'] },
 ];

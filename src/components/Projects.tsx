@@ -8,7 +8,7 @@ interface Props {
 
 export function Projects({ onOpen }: Props) {
   return (
-    <Section id="projects" index="03" title="Selected Projects">
+    <Section id="projects" index="04" title="Selected Projects">
       <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2">
         {projects.map((p) => (
           <article key={p.id} className="print-break-avoid flex flex-col">

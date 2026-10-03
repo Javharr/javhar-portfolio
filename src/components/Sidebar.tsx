@@ -1,19 +1,9 @@
-import { education, skills } from '../data';
+import { languages, skills } from '../data';
 import { Section } from './Section';
 
 export function Sidebar() {
   return (
     <div className="space-y-12">
-      <Section id="education" title="Education">
-        {education.map((e) => (
-          <div key={e.id}>
-            <h3 className="text-[16px] font-semibold text-ink">{e.school}</h3>
-            <p className="text-[15px] text-muted">{e.program}</p>
-            <p className="mt-1 font-mono text-[12px] text-faint">{e.period}</p>
-          </div>
-        ))}
-      </Section>
-
       <Section id="skills" title="Skills">
         <dl className="space-y-5">
           {skills.map((g) => (
@@ -31,9 +21,20 @@ export function Sidebar() {
         </dl>
       </Section>
 
+      <Section id="languages" title="Languages">
+        <ul className="space-y-1.5">
+          {languages.map((l) => (
+            <li key={l.name} className="flex justify-between text-[15px]">
+              <span className="text-ink">{l.name}</span>
+              <span className="font-mono text-[12px] text-muted">{l.level}</span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
       <Section id="focus" title="Currently exploring">
         <p className="text-[15px] leading-relaxed text-ink/85">
-          AI, systems analysis and autonomous systems where software meets the physical world.
+          Test automation, systems analysis and AI, and autonomous systems where software meets the physical world.
         </p>
       </Section>
     </div>

@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Awards } from './components/Awards';
+import { EducationList } from './components/EducationList';
 import { ExperienceList } from './components/ExperienceList';
 import { Header } from './components/Header';
 import { Highlights } from './components/Highlights';
@@ -30,6 +31,7 @@ export default function App() {
                 </div>
               </Section>
               <ExperienceList />
+              <EducationList onOpen={open} />
               <Awards onOpen={open} />
               <Projects onOpen={open} />
             </div>
