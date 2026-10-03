@@ -4,7 +4,6 @@ export const profile: Profile = {
   name: 'Javhar Bokhodirov',
   headline: 'QA Engineer · Business Systems Analyst',
   location: 'Tashkent, Uzbekistan',
-  openTo: 'Open to QA Engineer and Business / Systems Analyst roles',
   summary: [
     'QA Engineer in the core banking (ABS) team at UZUM Technologies × Kapitalbank. I test payment flows and SWIFT messaging, verify backend logic directly in the database with SQL and PL/SQL, and test APIs in Postman.',
     'Graduated from School 21 as a Business Systems Analyst: a full analysis cycle from stakeholders and BPMN to data models, UI specs and REST / SOAP integration. Studying Management Information Systems at Webster University (GPA 3.9, Dean’s List).',
